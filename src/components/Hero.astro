@@ -1,0 +1,110 @@
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container hero-container">
+    <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
+      <h1 class="hero-title">
+        Sprâncene perfecte,<br />
+        <span>definite natural</span>
+      </h1>
+      <p class="hero-subtitle">
+        Servicii profesionale de microblading, micropigmentare și tratamente pentru sprâncene
+      </p>
+      <div class="hero-buttons">
+        <a href="/servicii" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Descoperă serviciile</a>
+        <a href="/contact" class="btn btn-outline" data-aos="fade-up" data-aos-delay="500">Programează-te</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    background-image: url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(46, 26, 35, 0.9),
+      rgba(46, 26, 35, 0.6)
+    );
+  }
+  
+  .hero-container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-content {
+    max-width: 650px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero-title span {
+    color: var(--color-secondary);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: calc(0.75rem - 2px) calc(1.5rem - 2px);
+  }
+  
+  .btn-outline:hover {
+    background-color: white;
+    color: var(--color-dark);
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      height: 80vh;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+</style> 

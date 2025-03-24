@@ -1,0 +1,104 @@
+<section class="cta">
+  <div class="cta-overlay"></div>
+  <div class="container">
+    <div class="cta-content" data-aos="zoom-in">
+      <h2 class="cta-title">Programează-te acum pentru sprâncene perfecte</h2>
+      <p class="cta-description">
+        Fă primul pas către sprâncene naturale și bine definite care îți vor completa frumusețea.
+        Contactează-mă pentru o programare sau o consultație gratuită.
+      </p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-light" data-aos="fade-up" data-aos-delay="200">Programează-te acum</a>
+        <a href="/servicii" class="btn btn-outline-light" data-aos="fade-up" data-aos-delay="300">Vezi serviciile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    position: relative;
+    background-image: url('/images/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 5rem 0;
+    color: white;
+    text-align: center;
+  }
+  
+  .cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(183, 110, 121, 0.85),
+      rgba(46, 26, 35, 0.95)
+    );
+  }
+  
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cta-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-light {
+    background-color: white;
+    color: var(--color-primary);
+  }
+  
+  .btn-light:hover {
+    background-color: var(--color-light);
+  }
+  
+  .btn-outline-light {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: calc(0.75rem - 2px) calc(1.5rem - 2px);
+  }
+  
+  .btn-outline-light:hover {
+    background-color: white;
+    color: var(--color-primary);
+  }
+  
+  @media (max-width: 768px) {
+    .cta {
+      padding: 3rem 0;
+      background-attachment: scroll;
+    }
+    
+    .cta-title {
+      font-size: 2rem;
+    }
+    
+    .cta-description {
+      font-size: 1rem;
+    }
+  }
+</style> 

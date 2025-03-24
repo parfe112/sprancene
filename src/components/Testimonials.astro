@@ -1,0 +1,299 @@
+---
+const testimonials = [
+  {
+    name: "Ana Popescu",
+    city: "București",
+    image: "/images/testimonial-1.jpg",
+    text: "Nu am crezut că sprâncenele mele pot arăta atât de bine și natural. Andra a înțeles exact ce îmi doresc și rezultatul a fost peste așteptări. O recomand cu drag!"
+  },
+  {
+    name: "Maria Ionescu",
+    city: "Brașov",
+    image: "/images/testimonial-2.jpg",
+    text: "Serviciile de microblading oferite de Andra au schimbat complet felul în care arăt. Nu mai pierd timpul dimineața încercând să îmi desenez sprâncenele. Sunt perfecte de când mă trezesc!"
+  },
+  {
+    name: "Elena Dumitrescu",
+    city: "Cluj-Napoca",
+    image: "/images/testimonial-3.jpg",
+    text: "Aveam emoții înainte de procedură, dar Andra m-a făcut să mă simt în siguranță și confortabil. Rezultatul este absolut minunat și foarte natural. Toată lumea mă întreabă ce am făcut de arăt atât de bine."
+  },
+  {
+    name: "Diana Vasilescu",
+    city: "Timișoara",
+    image: "/images/testimonial-4.jpg",
+    text: "După ce am pierdut o mare parte din sprâncene din cauza unei afecțiuni medicale, am crezut că nu o să mai arăt niciodată bine. Andra a recreat sprâncenele perfecte pentru mine, care arată complet natural."
+  }
+];
+---
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">Ce spun clientele</h2>
+      <p class="section-description">
+        Descoperă experiențele celor care s-au bucurat de serviciile noastre
+      </p>
+    </div>
+    
+    <div class="testimonials-slider" data-aos="fade-up" data-aos-delay="200">
+      {testimonials.map(testimonial => (
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src={testimonial.image} alt={`Testimonial - ${testimonial.name}`} />
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.2">
+                <path d="M10 11H4V5h6v6zm10 0h-6V5h6v6zm-10 10H4v-6h6v6zm10 0h-6v-6h6v6z"/>
+              </svg>
+            </div>
+            <div class="testimonial-text">
+              {testimonial.text}
+            </div>
+            <div class="testimonial-author">
+              <div class="author-name">{testimonial.name}</div>
+              <div class="author-city">{testimonial.city}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="testimonials-dots" data-aos="fade-up" data-aos-delay="300">
+      {testimonials.map((_, index) => (
+        <button class={`dot ${index === 0 ? 'active' : ''}`} data-index={index} aria-label={`Testimonial ${index + 1}`}></button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.testimonials-slider') as HTMLElement;
+    const dots = document.querySelectorAll('.testimonials-dots .dot');
+    let slideIndex = 0;
+    let slideWidth = 0;
+    let autoplayTimer: number;
+    
+    // Initialize
+    function initSlider() {
+      if (!slider) return;
+      
+      const slides = slider.querySelectorAll('.testimonial-card');
+      if (slides.length === 0) return;
+      
+      slideWidth = (slides[0] as HTMLElement).offsetWidth;
+      
+      // Set initial position
+      updateSlidePosition();
+      
+      // Add event listeners to dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          slideIndex = index;
+          updateSlidePosition();
+          updateActiveDot();
+          resetAutoplay();
+        });
+      });
+      
+      // Start autoplay
+      startAutoplay();
+      
+      // Reset slideWidth on window resize
+      window.addEventListener('resize', () => {
+        const currentSlide = slider.querySelectorAll('.testimonial-card')[0] as HTMLElement;
+        if (currentSlide) {
+          slideWidth = currentSlide.offsetWidth;
+          updateSlidePosition();
+        }
+      });
+      
+      // Pause autoplay on hover
+      slider.addEventListener('mouseenter', () => {
+        clearInterval(autoplayTimer);
+      });
+      
+      slider.addEventListener('mouseleave', () => {
+        startAutoplay();
+      });
+    }
+    
+    function updateSlidePosition() {
+      if (!slider) return;
+      slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    }
+    
+    function updateActiveDot() {
+      dots.forEach((dot, index) => {
+        if (index === slideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+    
+    function startAutoplay() {
+      autoplayTimer = window.setInterval(() => {
+        slideIndex = (slideIndex + 1) % dots.length;
+        updateSlidePosition();
+        updateActiveDot();
+      }, 5000);
+    }
+    
+    function resetAutoplay() {
+      clearInterval(autoplayTimer);
+      startAutoplay();
+    }
+    
+    initSlider();
+  });
+</script>
+
+<style>
+  .testimonials {
+    padding: 5rem 0;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .testimonials-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+  
+  .testimonial-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 3px solid var(--color-primary);
+  }
+  
+  .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .testimonial-content {
+    background-color: var(--color-light);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .testimonial-quote {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--color-primary);
+  }
+  
+  .testimonial-text {
+    font-style: italic;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .testimonial-author {
+    margin-top: auto;
+  }
+  
+  .author-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-dark);
+  }
+  
+  .author-city {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+  }
+  
+  .testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0;
+  }
+  
+  .dot.active {
+    background-color: var(--color-primary);
+  }
+  
+  @media (min-width: 768px) {
+    .testimonial-card {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .testimonial-image {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .testimonials {
+      padding: 3rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .testimonial-content {
+      padding: 1.5rem;
+    }
+  }
+</style> 

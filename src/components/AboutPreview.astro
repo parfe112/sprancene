@@ -1,0 +1,208 @@
+<section class="about-preview">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+        <img src="/images/about-preview.jpg" alt="Andra, specialist în microblading" />
+        <div class="about-experience">
+          <span class="experience-number">5+</span>
+          <span class="experience-text">ani de experiență</span>
+        </div>
+      </div>
+      
+      <div class="about-content" data-aos="fade-left" data-aos-duration="1000">
+        <h2 class="about-title">Andra <span>Specialist în microblading</span></h2>
+        
+        <p class="about-text">
+          Cu peste 5 ani de experiență în domeniul microbladingului și al tratamentelor pentru sprâncene,
+          sunt dedicată să ofer fiecărui client servicii personalizate și rezultate naturale excepționale.
+        </p>
+        
+        <p class="about-text">
+          Pasiunea mea pentru arta sprâncenelor perfecte m-a motivat să urmez numeroase cursuri de specializare
+          și să perfecționez tehnici care evidențiază frumusețea naturală a fiecărei persoane.
+        </p>
+        
+        <div class="about-features">
+          <div class="feature" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h3>Certificări internaționale</h3>
+              <p>Formare continuă și certificări de la cei mai buni formatori din domeniu.</p>
+            </div>
+          </div>
+          
+          <div class="feature" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h3>Consultații personalizate</h3>
+              <p>Fiecare tratament este adaptat perfect trăsăturilor și nevoilor tale.</p>
+            </div>
+          </div>
+        </div>
+        
+        <a href="/despre" class="btn about-cta" data-aos="fade-up" data-aos-delay="400">Află mai multe despre mine</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-preview {
+    padding: 5rem 0;
+    background-color: var(--color-light);
+  }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .about-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .about-experience {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .experience-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    font-family: var(--font-display);
+  }
+  
+  .experience-text {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about-title span {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+  
+  .about-text {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+  }
+  
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .feature {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .feature-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(183, 110, 121, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+  }
+  
+  .feature-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-content p {
+    color: #666;
+  }
+  
+  .about-cta {
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 992px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .about-image {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-preview {
+      padding: 3rem 0;
+    }
+    
+    .about-title {
+      font-size: 2rem;
+    }
+    
+    .about-experience {
+      bottom: 20px;
+      right: 20px;
+      padding: 1rem;
+      min-width: 100px;
+    }
+    
+    .experience-number {
+      font-size: 2rem;
+    }
+  }
+</style> 
