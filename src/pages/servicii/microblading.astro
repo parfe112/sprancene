@@ -1,0 +1,309 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Microblading Sprâncene | Sprâncene Perfecte">
+  <Navbar />
+  
+  <main>
+    <section class="service-header">
+      <div class="container">
+        <h1 class="page-title">Microblading Sprâncene</h1>
+        <p class="page-description">Transformă-ți sprâncenele în opere de artă cu tehnica Microblading</p>
+      </div>
+    </section>
+
+    <section class="service-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="main-content">
+            <h2>Ce este Microblading?</h2>
+            <p>Microblading este o tehnică avansată de micropigmentare semi-permanentă care creează sprâncene naturale și perfecte. Spre deosebire de micropigmentarea tradițională, Microblading folosește un instrument special cu ace fine care creează fire de păr individuale, oferind un aspect incredibil de natural.</p>
+
+            <h2>Procesul Microblading</h2>
+            <p>Procesul de Microblading este meticulos și necesită atenție la detalii:</p>
+            <ul>
+              <li><strong>Consultația inițială:</strong> În timpul primei întâlniri, discutăm despre stilul dorit, analizăm forma naturală a feței și stabilim rezultatul ideal.</li>
+              <li><strong>Designul:</strong> Creăm un design personalizat care se potrivește perfect cu trăsăturile tale faciale și stilul tău.</li>
+              <li><strong>Procedura:</strong> Folosim un instrument special cu ace fine pentru a depune pigmentul în stratul superficial al pielii, creând fire de păr individuale.</li>
+              <li><strong>Retușarea:</strong> După 4-6 săptămâni, programăm o ședință de retușare pentru a perfecționa rezultatul.</li>
+            </ul>
+
+            <h2>Beneficii ale Microblading</h2>
+            <ul>
+              <li><strong>Aspect natural:</strong> Firele de păr individuale creează un aspect incredibil de natural.</li>
+              <li><strong>Durabilitate:</strong> Rezultatul durează între 12-18 luni, în funcție de tipul de piele și stilul de viață.</li>
+              <li><strong>Economie de timp:</strong> Nu mai trebuie să te machiezi zilnic sprâncenele.</li>
+              <li><strong>Personalizare:</strong> Fiecare procedură este adaptată individual pentru a se potrivi perfect cu trăsăturile tale.</li>
+            </ul>
+
+            <h2>Îngrijire după procedură</h2>
+            <p>Pentru a asigura rezultate optime, este important să urmezi aceste recomandări:</p>
+            <ul>
+              <li>Evită să atingi sau să speli zona tratată în primele 24 de ore</li>
+              <li>Nu folosi produse de machiaj pe zona tratată timp de 7 zile</li>
+              <li>Protejează-ți sprâncenele de soare folosind cremă cu SPF</li>
+              <li>Evită să faci exerciții intense care pot determina transpirație excesivă</li>
+            </ul>
+
+            <h2>Pentru cine este potrivit Microblading?</h2>
+            <p>Microblading este ideal pentru:</p>
+            <ul>
+              <li>Persoane cu sprâncene rare sau care lipsesc parțial</li>
+              <li>Cele care doresc să își îmbunătățească forma naturală a sprâncenelor</li>
+              <li>Persoane active care doresc să economisească timp în rutina zilnică</li>
+              <li>Cele care suferă de alopecie sau au pierdut sprâncenele din cauza tratamentelor medicale</li>
+            </ul>
+
+            <h2>Durata și cost</h2>
+            <p>O procedură completă de Microblading durează aproximativ 2-3 ore, inclusiv consultația și designul. Costul variază în funcție de complexitatea procedurii și experiența tehnicianului. Retușarea, programată după 4-6 săptămâni, este inclusă în prețul inițial.</p>
+
+            <h2>Siguranță și calitate</h2>
+            <p>Folosim doar produse și instrumente de cea mai înaltă calitate, sterilizate corespunzător. Toate procedurile sunt efectuate într-un mediu steril și sigur, respectând toate standardele de igienă și siguranță.</p>
+
+            <div class="cta-section">
+              <h2>Programează o consultație</h2>
+              <p>Dorești să transformi sprâncenele tale? Contactează-ne pentru o consultație personalizată și află cum te putem ajuta să obții sprâncenele perfecte.</p>
+              <a href="/contact" class="btn">Programează acum</a>
+            </div>
+          </div>
+
+          <div class="sidebar">
+            <div class="service-info-card">
+              <h3>Informații importante</h3>
+              <ul>
+                <li><strong>Durata:</strong> 2-3 ore</li>
+                <li><strong>Durabilitate:</strong> 12-18 luni</li>
+                <li><strong>Retușare:</strong> Inclusă după 4-6 săptămâni</li>
+                <li><strong>Recuperare:</strong> 7-14 zile</li>
+              </ul>
+            </div>
+
+            <div class="service-gallery">
+              <h3>Rezultate Microblading</h3>
+              <div class="gallery-grid">
+                <img src="/images/microblading-before-1.jpg" alt="Înainte Microblading" />
+                <img src="/images/microblading-after-1.jpg" alt="După Microblading" />
+                <img src="/images/microblading-before-2.jpg" alt="Înainte Microblading" />
+                <img src="/images/microblading-after-2.jpg" alt="După Microblading" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .service-header {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 5rem 0 3rem;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-description {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+
+  .service-content {
+    padding: 5rem 0;
+    background-color: var(--color-light);
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .main-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .main-content h2 {
+    color: var(--color-dark);
+    margin: 2rem 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .main-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .main-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .main-content strong {
+    color: var(--color-dark);
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .service-info-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .service-info-card h3 {
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .service-info-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-info-card li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .service-info-card li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .service-gallery {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .service-gallery h3 {
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+
+  .cta-section {
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: white;
+    color: var(--color-primary);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 992px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-header {
+      padding: 4rem 0 2rem;
+    }
+
+    .page-title {
+      font-size: 2.2rem;
+    }
+
+    .page-description {
+      font-size: 1rem;
+    }
+
+    .service-content {
+      padding: 3rem 0;
+    }
+
+    .main-content {
+      padding: 1.5rem;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style> 

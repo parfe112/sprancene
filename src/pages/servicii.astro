@@ -47,7 +47,7 @@ const services = [
     image: '/images/service-micropigmentare.jpg'
   },
   {
-    id: 'combo',
+    id: 'combo-brows',
     title: 'Combo Brows',
     description: 'Combinație între microblading și micropigmentare, pentru un rezultat natural cu durabilitate ridicată.',
     details: [
@@ -179,9 +179,14 @@ const services = [
                 <span>Preț:</span> {service.price}
               </div>
               
-              <a href="/contact" class="btn service-cta" data-aos="fade-up" data-aos-delay={index * 100 + 400}>
-                Programează-te
-              </a>
+              <div class="service-actions">
+                <a href={`/servicii/${service.id}`} class="btn btn-secondary" data-aos="fade-up" data-aos-delay={index * 100 + 350}>
+                  Află mai multe
+                </a>
+                <a href="/contact" class="btn service-cta" data-aos="fade-up" data-aos-delay={index * 100 + 400}>
+                  Programează-te
+                </a>
+              </div>
             </div>
           </div>
         ))}
@@ -429,5 +434,22 @@ const services = [
       font-size: 2rem;
       margin-bottom: 2rem;
     }
+  }
+  
+  .service-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
   }
 </style> 
