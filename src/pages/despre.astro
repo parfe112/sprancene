@@ -7,25 +7,25 @@ const certifications = [
   {
     name: 'Certificare Master în Microblading',
     institution: 'Academia Europeană de Micropigmentare',
-    year: '2018',
+    year: '2014',
     icon: 'certificate'
   },
   {
     name: 'Specializare în Micropigmentare Digitală',
     institution: 'PhiBrows Academy',
-    year: '2019',
+    year: '2015',
     icon: 'award'
   },
   {
     name: 'Curs Avansat de Colorimetrie și Pigmenți',
     institution: 'International Permanent Makeup Association',
-    year: '2020',
+    year: '2018',
     icon: 'colors'
   },
   {
-    name: 'Specializare în Laminare Sprâncene',
+    name: 'Specializare în Laminare Gene/Sprâncene',
     institution: 'Beauty Academy Professional',
-    year: '2021',
+    year: '2020',
     icon: 'education'
   }
 ];
@@ -48,7 +48,7 @@ const certifications = [
       <div class="container">
         <div class="about-grid">
           <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
-            <img src="/images/about-main.jpg" alt="Andra - Specialist în microblading" />
+            <img src="/images/andra.jpg" alt="Andra - Specialist în microblading" />
           </div>
           
           <div class="about-content" data-aos="fade-left" data-aos-duration="1000">
@@ -222,7 +222,8 @@ const certifications = [
   
   .about-section {
     padding: 5rem 0;
-    background-color: white;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
   }
   
   .about-grid {
@@ -235,7 +236,8 @@ const certifications = [
   .about-image {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px var(--shadow-color);
+    transition: box-shadow 0.3s ease;
   }
   
   .about-image img {
@@ -247,7 +249,8 @@ const certifications = [
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .section-title.centered {
@@ -258,12 +261,14 @@ const certifications = [
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #444;
+    color: var(--secondary-text, #444);
+    transition: color 0.3s ease;
   }
   
   .values-section {
     padding: 5rem 0;
-    background-color: var(--color-light);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
   }
   
   .values-grid {
@@ -274,12 +279,12 @@ const certifications = [
   }
   
   .value-item {
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   .value-item:hover {
@@ -301,17 +306,20 @@ const certifications = [
   .value-item h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .value-item p {
-    color: #555;
+    color: var(--secondary-text, #555);
     line-height: 1.6;
+    transition: color 0.3s ease;
   }
   
   .certifications-section {
     padding: 5rem 0;
-    background-color: white;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
   }
   
   .certifications-grid {
@@ -322,14 +330,14 @@ const certifications = [
   }
   
   .certification-item {
-    background-color: var(--color-light);
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   .certification-item:hover {
@@ -343,10 +351,11 @@ const certifications = [
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--card-bg);
     color: var(--color-primary);
     flex-shrink: 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   .certification-content {
@@ -356,7 +365,8 @@ const certifications = [
   .certification-item h3 {
     font-size: 1.1rem;
     margin-bottom: 0.4rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .certification-details {

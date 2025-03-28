@@ -58,7 +58,7 @@ import Footer from '../../components/Footer.astro';
             </ul>
 
             <h2>Durata și cost</h2>
-            <p>O procedură completă de micropigmentare durează aproximativ 2-3 ore, inclusiv consultația și designul. Costul variază în funcție de complexitatea procedurii și experiența tehnicianului. Retușarea, programată după 4-6 săptămâni, este inclusă în prețul inițial.</p>
+            <p>O procedură completă de micropigmentare durează aproximativ 2-3 ore, inclusiv consultația și designul. Costul variază în funcție de complexitatea procedurii și experiența tehnicianului. Retușarea, programată după 4-6 săptămâni, nu este inclusă în prețul inițial.</p>
 
             <h2>Siguranță și calitate</h2>
             <p>Folosim doar produse și instrumente de cea mai înaltă calitate, sterilizate corespunzător. Toate procedurile sunt efectuate într-un mediu steril și sigur, respectând toate standardele de igienă și siguranță.</p>
@@ -121,7 +121,8 @@ import Footer from '../../components/Footer.astro';
 
   .service-content {
     padding: 5rem 0;
-    background-color: var(--color-light);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
   }
 
   .content-grid {
@@ -132,16 +133,18 @@ import Footer from '../../components/Footer.astro';
   }
 
   .main-content {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .main-content h2 {
-    color: var(--color-dark);
+    color: var(--text-color);
     margin: 2rem 0 1rem;
     font-size: 1.8rem;
+    transition: color 0.3s ease;
   }
 
   .main-content h2:first-child {
@@ -151,7 +154,8 @@ import Footer from '../../components/Footer.astro';
   .main-content p {
     margin-bottom: 1.5rem;
     line-height: 1.6;
-    color: #555;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
   }
 
   .main-content ul {
@@ -162,11 +166,13 @@ import Footer from '../../components/Footer.astro';
   .main-content li {
     margin-bottom: 0.5rem;
     line-height: 1.6;
-    color: #555;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
   }
 
   .main-content strong {
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
 
   .sidebar {
@@ -176,16 +182,18 @@ import Footer from '../../components/Footer.astro';
   }
 
   .service-info-card {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .service-info-card h3 {
-    color: var(--color-dark);
+    color: var(--text-color);
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
+    transition: color 0.3s ease;
   }
 
   .service-info-card ul {
@@ -196,7 +204,9 @@ import Footer from '../../components/Footer.astro';
   .service-info-card li {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--secondary-text);
+    transition: color 0.3s ease, border-color 0.3s ease;
   }
 
   .service-info-card li:last-child {
@@ -205,17 +215,24 @@ import Footer from '../../components/Footer.astro';
     border-bottom: none;
   }
 
+  .service-info-card strong {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+  }
+
   .service-gallery {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .service-gallery h3 {
-    color: var(--color-dark);
+    color: var(--text-color);
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
+    transition: color 0.3s ease;
   }
 
   .gallery-grid {

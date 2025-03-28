@@ -20,6 +20,21 @@ const currentPath = pathname.slice(1); // Remove the leading slash
           <li class="nav-item"><a href="/galerie" class="nav-link">Galerie</a></li>
           <li class="nav-item"><a href="/despre" class="nav-link">Despre</a></li>
           <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+          <li class="nav-item">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Comutare mod întunecat/luminos">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-light">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
+          </li>
         </ul>
       </nav>
       
@@ -42,6 +57,52 @@ const currentPath = pathname.slice(1); // Remove the leading slash
       nav?.classList.toggle('active');
       mobileNavToggle.classList.toggle('active');
     });
+    
+    // Update icon based on current theme
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      updateThemeIcon();
+      
+      // Add click event listener for dark mode toggle
+      themeToggle.addEventListener('click', function() {
+        // Implement dark mode toggle directly here
+        const isDarkMode = document.documentElement.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode ? 'true' : 'false');
+        updateThemeIcon();
+      });
+      
+      // Listen for theme changes
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.attributeName === 'class') {
+            updateThemeIcon();
+          }
+        });
+      });
+      
+      observer.observe(document.documentElement, { attributes: true });
+    }
+    
+    function updateThemeIcon() {
+      const isDarkMode = document.documentElement.classList.contains('dark-mode');
+      if (themeToggle) {
+        themeToggle.innerHTML = isDarkMode 
+          ? `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-dark">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+             </svg>` 
+          : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-light">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+             </svg>`;
+      }
+    }
   });
 </script>
 
@@ -52,9 +113,15 @@ const currentPath = pathname.slice(1); // Remove the leading slash
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 10px var(--shadow-color);
     padding: 0.5rem 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dark-mode .header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 10px var(--shadow-color);
   }
   
   .navbar {
@@ -100,9 +167,10 @@ const currentPath = pathname.slice(1); // Remove the leading slash
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
-    color: var(--color-dark);
+    color: var(--text-color);
     padding: 0.5rem 0;
     position: relative;
+    transition: color 0.3s ease;
   }
   
   .nav-link:hover {
@@ -141,6 +209,32 @@ const currentPath = pathname.slice(1); // Remove the leading slash
     transition: all 0.3s ease;
   }
   
+  .theme-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    color: var(--color-primary);
+    transform: rotate(15deg);
+  }
+  
+  .dark-mode .theme-toggle {
+    color: var(--color-secondary);
+  }
+  
+  .theme-icon-light, .theme-icon-dark {
+    width: 24px;
+    height: 24px;
+  }
+  
   @media (max-width: 768px) {
     .mobile-nav-toggle {
       display: flex;
@@ -151,11 +245,16 @@ const currentPath = pathname.slice(1); // Remove the leading slash
       top: 60px;
       left: 0;
       width: 100%;
-      background-color: white;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      background-color: var(--card-bg);
+      box-shadow: 0 5px 10px var(--shadow-color);
       padding: 1rem 0;
       clip-path: circle(0px at top right);
-      transition: clip-path 0.5s ease-in-out;
+      transition: clip-path 0.5s ease-in-out, background-color 0.3s ease;
+    }
+    
+    .dark-mode .nav {
+      background-color: var(--card-bg);
+      box-shadow: 0 5px 10px var(--shadow-color);
     }
     
     .nav.active {

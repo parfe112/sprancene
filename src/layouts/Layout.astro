@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title = "Andra-Microblading | Servicii profesionale de microblading" } = Astro.props;
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -19,6 +20,27 @@ const { title = "Andra-Microblading | Servicii profesionale de microblading" } =
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		
+		<script is:inline>
+			// Check for dark mode preference immediately to avoid FOUC
+			const isDarkMode = localStorage.getItem('darkMode') === 'true';
+			if (isDarkMode) {
+				document.documentElement.classList.add('dark-mode');
+			}
+			
+			// Theme toggle functionality (global scope)
+			function toggleDarkMode() {
+				const isDarkMode = document.documentElement.classList.toggle('dark-mode');
+				localStorage.setItem('darkMode', isDarkMode ? 'true' : 'false');
+			}
+
+			// Initialize dark mode state on page load
+			document.addEventListener('DOMContentLoaded', function() {
+				if (localStorage.getItem('darkMode') === 'true') {
+					document.documentElement.classList.add('dark-mode');
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<slot />
@@ -56,9 +78,10 @@ const { title = "Andra-Microblading | Servicii profesionale de microblading" } =
 		width: 100%;
 		min-height: 100%;
 		font-family: var(--font-main);
-		color: var(--color-dark);
-		background-color: var(--color-light);
+		color: var(--text-color);
+		background-color: var(--bg-color);
 		line-height: 1.6;
+		transition: background-color 0.3s ease, color 0.3s ease;
 	}
 	
 	h1, h2, h3, h4 {
@@ -107,5 +130,31 @@ const { title = "Andra-Microblading | Servicii profesionale de microblading" } =
 	img {
 		max-width: 100%;
 		height: auto;
+	}
+	
+	/* Dark Mode Toggle Button */
+	.theme-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: var(--card-bg);
+		border: 1px solid var(--color-secondary);
+		color: var(--color-primary);
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 2px 5px var(--shadow-color);
+	}
+	
+	.theme-toggle:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px var(--shadow-color);
+	}
+	
+	.theme-toggle svg {
+		width: 20px;
+		height: 20px;
 	}
 </style>

@@ -96,10 +96,10 @@ import Footer from '../../components/Footer.astro';
                 <li>Consultație și design personalizat</li>
                 <li>Procedura completă de micropigmentare</li>
                 <li>Anestezic local pentru confort</li>
-                <li>Ședință de retuș inclusă (la 4-6 săptămâni)</li>
+                <li>Ședință de retuș nu este inclusă (la 4-6 săptămâni)</li>
                 <li>Instrucțiuni detaliate pentru îngrijire</li>
               </ul>
-              <p class="price">Preț: 1200 lei</p>
+              <p class="price">Preț: 800 lei</p>
             </div>
             
             <div class="content-section" data-aos="fade-up">
@@ -170,7 +170,8 @@ import Footer from '../../components/Footer.astro';
   
   .service-content {
     padding: 5rem 0;
-    background-color: var(--color-light);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
   }
   
   .content-grid {
@@ -186,22 +187,25 @@ import Footer from '../../components/Footer.astro';
   }
   
   .content-section {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   .content-section h2 {
-    color: var(--color-dark);
+    color: var(--text-color);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
+    transition: color 0.3s ease;
   }
   
   .content-section p {
-    color: #555;
+    color: var(--secondary-text);
     line-height: 1.7;
     margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
   }
   
   .content-section ul,
@@ -215,6 +219,8 @@ import Footer from '../../components/Footer.astro';
     margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
   }
   
   .content-section li:before {
@@ -258,17 +264,19 @@ import Footer from '../../components/Footer.astro';
   
   .info-card,
   .gallery-card {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   .info-card h3,
   .gallery-card h3 {
-    color: var(--color-dark);
+    color: var(--text-color);
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
+    transition: color 0.3s ease;
   }
   
   .info-card ul {
@@ -280,7 +288,9 @@ import Footer from '../../components/Footer.astro';
   .info-card li {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--secondary-text);
+    transition: color 0.3s ease, border-color 0.3s ease;
   }
   
   .info-card li:last-child {

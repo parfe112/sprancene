@@ -2,8 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import lipsImage from '../assets/img/servicii/lips.jpg';
+import microbladingImage from '../assets/img/servicii/microblading.jpg';
+import micropigmentareImage from '../assets/img/servicii/micropigmentare.jpg';
+import comboBrowsImage from '../assets/img/servicii/combo-brows.jpg';
+import eyelinerImage from '../assets/img/servicii/eyeliner.jpg';
+import laminareImage from '../assets/img/servicii/laminare.jpg';
 
-const services = [
+interface Service {
+  id: string;
+  title: string;
+  description: string;
+  details: string[];
+  includes: string[];
+  price: string;
+  image: string | ImageMetadata;
+}
+
+const services: Service[] = [
   {
     id: 'microblading',
     title: 'Microblading',
@@ -18,12 +35,12 @@ const services = [
     includes: [
       'Consultație completă și design personalizat',
       'Anestezic local pentru confort',
-      'Ședință de retuș inclusă (la 4-6 săptămâni)',
+      'Ședință de retuș contra cost 250 lei (la 4-6 săptămâni)',
       'Instrucțiuni de îngrijire post-procedură',
       'Programare de urmărire'
     ],
-    price: '1200 lei',
-    image: '/images/service-microblading.jpg'
+    price: '800 lei',
+    image: microbladingImage
   },
   {
     id: 'micropigmentare',
@@ -39,12 +56,12 @@ const services = [
     includes: [
       'Consultație și design personalizat',
       'Anestezic local pentru confort',
-      'Ședință de retuș inclusă (la 4-6 săptămâni)',
+      'Ședință de retuș contra cost 250 lei (la 4-6 săptămâni)',
       'Instrucțiuni detaliate pentru îngrijire',
       'Programare de urmărire pentru verificarea rezultatelor'
     ],
-    price: '1300 lei',
-    image: '/images/service-micropigmentare.jpg'
+    price: '800 lei',
+    image: micropigmentareImage
   },
   {
     id: 'combo-brows',
@@ -60,12 +77,12 @@ const services = [
     includes: [
       'Consultație detaliată și design personalizat',
       'Anestezic local pentru confort maxim',
-      'Ședință de retuș inclusă (la 4-6 săptămâni)',
+      'Ședință de retuș contra cost 250 lei (la 4-6 săptămâni)',
       'Kit de îngrijire post-procedură',
       'Programare de urmărire'
     ],
-    price: '1500 lei',
-    image: '/images/service-combo.jpg'
+    price: '1000 lei',
+    image: comboBrowsImage
   },
   {
     id: 'eyeliner',
@@ -81,12 +98,12 @@ const services = [
     includes: [
       'Consultație și design personalizat',
       'Anestezic local pentru confort maxim',
-      'Ședință de retuș inclusă (la 4-6 săptămâni)',
+      'Ședință de retuș contra cost 250 lei (la 4-6 săptămâni)',
       'Instrucțiuni detaliate pentru îngrijire post-procedură',
       'Programare de urmărire pentru verificarea rezultatelor'
     ],
-    price: '1100 lei',
-    image: '/images/service-eyeliner.jpg'
+    price: '700 lei',
+    image: eyelinerImage
   },
   {
     id: 'lips-blush',
@@ -102,16 +119,16 @@ const services = [
     includes: [
       'Consultație și design personalizat al formei',
       'Anestezic local pentru confort maxim',
-      'Ședință de retuș inclusă (la 4-6 săptămâni)',
+      'Ședință de retuș contra cost 250 lei (la 4-6 săptămâni)',
       'Kit de îngrijire post-procedură',
       'Programare de urmărire pentru evaluarea rezultatelor'
     ],
-    price: '1300 lei',
-    image: '/images/service-lips-blush.jpg'
+    price: '800 lei',
+    image: lipsImage
   },
   {
     id: 'laminare',
-    title: 'Laminare sprâncene',
+    title: 'Laminare gene/sprâncene',
     description: 'Tratament de restructurare pentru sprâncene naturale, oferind volum și disciplină firelor rebele.',
     details: [
       'Redefinește și disciplinează firele naturale ale sprâncenelor',
@@ -128,7 +145,7 @@ const services = [
       'Recomandări pentru menținerea rezultatelor'
     ],
     price: '250 lei',
-    image: '/images/service-laminare.jpg'
+    image: laminareImage
   }
 ];
 ---
@@ -151,7 +168,24 @@ const services = [
         {services.map((service, index) => (
           <div id={service.id} class="service-item" data-aos="fade-up" data-aos-delay={index * 100}>
             <div class="service-image">
-              <img src={service.image} alt={service.title} />
+              {(service.id === 'lips-blush' || service.id === 'microblading' || service.id === 'micropigmentare' || service.id === 'combo-brows' || service.id === 'eyeliner' || service.id === 'laminare') ? (
+                <Image 
+                  src={
+                    service.id === 'lips-blush' ? lipsImage : 
+                    service.id === 'microblading' ? microbladingImage :
+                    service.id === 'micropigmentare' ? micropigmentareImage :
+                    service.id === 'eyeliner' ? eyelinerImage :
+                    service.id === 'laminare' ? laminareImage :
+                    comboBrowsImage
+                  }
+                  alt={service.title}
+                  width={800} 
+                  height={600}
+                  quality="max"
+                />
+              ) : (
+                <img src={service.image as string} alt={service.title} />
+              )}
             </div>
             <div class="service-content">
               <h2 class="service-title">{service.title}</h2>
@@ -220,7 +254,7 @@ const services = [
           
           <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
             <h3>De ce este necesară o ședință de retuș?</h3>
-            <p>Retușul după 4-6 săptămâni este esențial pentru a perfecționa rezultatul, a ajusta forma și a adăuga pigment în zonele unde acesta nu s-a fixat complet. Această ședință este inclusă în prețul inițial al procedurii.</p>
+            <p>Retușul după 4-6 săptămâni este esențial pentru a perfecționa rezultatul, a ajusta forma și a adăuga pigment în zonele unde acesta nu s-a fixat complet. Această ședință este contra cost .</p>
           </div>
           
           <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
@@ -297,14 +331,16 @@ const services = [
   .service-title {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .service-description {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--secondary-text, #555);
     margin-bottom: 2rem;
     line-height: 1.7;
+    transition: color 0.3s ease;
   }
   
   .service-details, 
@@ -316,7 +352,8 @@ const services = [
   .service-includes h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .details-list, 
@@ -346,15 +383,17 @@ const services = [
   }
   
   .faq {
-    background-color: var(--color-light);
+    background-color: var(--bg-color);
     padding: 5rem 0;
+    transition: background-color 0.3s ease;
   }
   
   .section-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .faq-grid {
@@ -364,21 +403,24 @@ const services = [
   }
   
   .faq-item {
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .faq-question {
+  .faq-item h3 {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
-  .faq-answer {
-    color: #555;
+  .faq-item p {
+    color: var(--secondary-text, #555);
     line-height: 1.6;
+    transition: color 0.3s ease;
   }
   
   @media (max-width: 992px) {

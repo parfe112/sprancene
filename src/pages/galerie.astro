@@ -7,22 +7,34 @@ import { Image } from 'astro:assets';
 // Importarea imaginilor din assets
 import microblading1 from '../assets/img-gallery/microblading1.webp';
 import microblading2 from '../assets/img-gallery/microblading2.webp';
-import microblading3 from '../assets/img-gallery/microblading3.webp';
+import microbladingRezNat from '../assets/img-gallery/microblading-rez-nat.jpg';
+import microbladingDefPerf2 from '../assets/img-gallery/microblading-def-perf2.jpg';
+import microbladingTehPrecizie2 from '../assets/img-gallery/microblading-teh-precizie2.jpg';
 
 import micropigmentare1 from '../assets/img-gallery/micropigmentare1.webp';
 import micropigmentare2 from '../assets/img-gallery/micropigmentare2.webp';
-import micropigmentare3 from '../assets/img-gallery/micropigmentare3.webp';
+import micropigmentareRezElegant from '../assets/img-gallery/micropigmentare-rez-elegant.jpg';
+import micropigmentareAspNatural from '../assets/img-gallery/micropigmentare-asp-natural.jpg';
+import micropigmentareDetFine from '../assets/img-gallery/micropigmentare-det-fine.jpg';
 
 import combo1 from '../assets/img-gallery/combo1.webp';
 import combo2 from '../assets/img-gallery/combo2.webp';
+import comboBrowsProf from '../assets/img-gallery/combo-brows-prof.jpg';
+import comboBrowsRezDurata from '../assets/img-gallery/combo-brows-rez-durata.jpg';
+import comboBrowsDefPerf from '../assets/img-gallery/combo-brows-def-perf.jpg';
 
 import laminare1 from '../assets/img-gallery/laminare1.webp';
 import laminare2 from '../assets/img-gallery/laminare2.webp';
+import laminareVolNatural from '../assets/img-gallery/laminare-vol-natural.jpg';
+import laminareGene from '../assets/img-gallery/laminare-gene.jpg';
 
 // Imagini pentru secțiunea "Eyeliner" și "Lips Blush"
 import eyeliner1 from '../assets/img-gallery/eyeliner1.png';
 import eyeliner2 from '../assets/img-gallery/eyeliner2.png';
+import eyelinerClasic from '../assets/img-gallery/eyeliner-clasic.jpg';
+import eyelinerDetFine from '../assets/img-gallery/eyeliner-det-fine.jpg';
 import lipsblush1 from '../assets/img-gallery/lipsblush1.png';
+import lipsblushNatural from '../assets/img-gallery/lipsblush-natural.jpg';
 
 const galleries = [
   {
@@ -31,17 +43,17 @@ const galleries = [
     description: 'Rezultate naturale de microblading prin tehnica manuală de creare a firelor de păr.',
     images: [
       {
-        src: microblading1,
+        src: microbladingRezNat,
         alt: 'Microblading rezultat natural',
         before: microblading2
       },
       {
-        src: microblading2,
+        src: microbladingTehPrecizie2,
         alt: 'Microblading tehnică de precizie',
         before: microblading1
       },
       {
-        src: microblading3,
+        src: microbladingDefPerf2,
         alt: 'Microblading definire perfectă',
         before: microblading2
       }
@@ -53,17 +65,17 @@ const galleries = [
     description: 'Sprâncene definite cu aspect natural prin tehnica digitală de micropigmentare.',
     images: [
       {
-        src: micropigmentare1,
+        src: micropigmentareRezElegant,
         alt: 'Micropigmentare rezultat elegant',
         before: micropigmentare2
       },
       {
-        src: micropigmentare2,
+        src: micropigmentareAspNatural,
         alt: 'Micropigmentare aspect natural',
         before: micropigmentare1
       },
       {
-        src: micropigmentare3,
+        src: micropigmentareDetFine,
         alt: 'Micropigmentare detalii fine',
         before: micropigmentare2
       }
@@ -75,17 +87,17 @@ const galleries = [
     description: 'Combinația perfectă între microblading și micropigmentare pentru un rezultat durabil și natural.',
     images: [
       {
-        src: combo1,
+        src: comboBrowsProf,
         alt: 'Combo brows aspect profesional',
         before: combo2
       },
       {
-        src: combo2,
+        src: comboBrowsDefPerf,
         alt: 'Combo brows rezultat de durată',
         before: combo1
       },
       {
-        src: microblading1,
+        src: comboBrowsRezDurata,
         alt: 'Combo brows definire perfectă',
         before: combo2
       }
@@ -97,12 +109,12 @@ const galleries = [
     description: 'Eyeliner permanent pentru un look perfect definit în fiecare zi.',
     images: [
       {
-        src: eyeliner1,
+        src: eyelinerClasic,
         alt: 'Eyeliner permanent look clasic',
         before: eyeliner2
       },
       {
-        src: eyeliner2,
+        src: eyelinerDetFine,
         alt: 'Eyeliner permanent detalii fine',
         before: eyeliner1
       }
@@ -115,29 +127,29 @@ const galleries = [
     images: [
       {
         src: lipsblush1,
-        alt: 'Lips Blush nuanță naturală',
-        before: laminare1
+        alt: 'Lips Blush efect hidratant',
+        before: lipsblush1
       },
       {
-        src: laminare1,
-        alt: 'Lips Blush efect hidratant',
+        src: lipsblushNatural,
+        alt: 'Lips Blush nuanță naturală',
         before: lipsblush1
       }
     ]
   },
   {
     id: 'laminare',
-    title: 'Laminare sprâncene',
+    title: 'Laminare gene/sprâncene',
     description: 'Sprâncene restructurate, cu volum și aspect definit prin tehnica de laminare.',
     images: [
       {
-        src: laminare1,
+        src: laminareVolNatural,
         alt: 'Laminare volum natural',
         before: laminare2
       },
       {
-        src: laminare2,
-        alt: 'Laminare sprâncene restructurate',
+        src: laminareGene,
+        alt: 'Laminare gene',
         before: laminare1
       }
     ]
@@ -173,28 +185,34 @@ const galleries = [
             <p class="gallery-description">{gallery.description}</p>
             
             <div class="gallery-grid">
-              {gallery.images.map((image, index) => (
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay={index * 100 + galleryIndex * 50}>
-                  <div class="image-container">
-                    <img 
-                      src={image.src.src} 
-                      alt={image.alt} 
-                      loading="lazy"
-                      class="gallery-image"
-                    />
-                    <div class="image-overlay">
-                      <button class="overlay-btn" data-before={image.before.src} data-after={image.src.src}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                          <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Înainte / După
-                      </button>
+              {gallery.images.map((image, index) => {
+                // Handle both object with src property and direct string URL
+                const imgSrc = typeof image.src === 'object' && 'src' in image.src ? image.src.src : String(image.src);
+                const beforeSrc = typeof image.before === 'object' && 'src' in image.before ? image.before.src : String(image.before);
+                
+                return (
+                  <div class="gallery-item" data-aos="zoom-in" data-aos-delay={index * 100 + galleryIndex * 50}>
+                    <div class="image-container">
+                      <img 
+                        src={imgSrc} 
+                        alt={image.alt} 
+                        loading="lazy"
+                        class="gallery-image"
+                      />
+                      <div class="image-overlay">
+                        <button class="overlay-btn" data-before={beforeSrc} data-after={imgSrc}>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                          </svg>
+                          Înainte / După
+                        </button>
+                      </div>
                     </div>
+                    <p class="image-caption">{image.alt}</p>
                   </div>
-                  <p class="image-caption">{image.alt}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         ))}
@@ -232,78 +250,73 @@ const galleries = [
   <Footer />
 </Layout>
 
-<script>
-  // Filtru galerie
+<script is:inline>
   document.addEventListener('DOMContentLoaded', function() {
     // Referințe elemente
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryCategories = document.querySelectorAll('.gallery-category');
     
-    // Funcții pentru filtrare
-    function filterGallery(category: string) {
+    // Funcția de filtrare
+    function filterGallery(category) {
       if (category === 'toate') {
         galleryCategories.forEach((cat) => {
-          (cat as HTMLElement).style.display = 'block';
+          cat.style.display = 'block';
         });
       } else {
         galleryCategories.forEach((cat) => {
-          if (cat.getAttribute('data-category') === category) {
-            (cat as HTMLElement).style.display = 'block';
+          const catName = cat.getAttribute('data-category');
+          if (catName === category) {
+            cat.style.display = 'block';
           } else {
-            (cat as HTMLElement).style.display = 'none';
+            cat.style.display = 'none';
           }
         });
       }
     }
     
-    // Adăugare evenimente pentru butoanele de filtrare
+    // Inițializare butoane de filtrare
     filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Resetare starea activă
+      button.addEventListener('click', function() {
+        // Resetare stare activă
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+        this.classList.add('active');
         
         // Filtrare
-        const category = button.getAttribute('data-category');
+        const category = this.getAttribute('data-category');
         if (category) filterGallery(category);
       });
     });
     
     // Lightbox funcționalitate
-    const lightbox = document.getElementById('gallery-lightbox') as HTMLElement;
+    const lightbox = document.getElementById('gallery-lightbox');
     const closeButton = document.querySelector('.lightbox-close');
     const imageContainers = document.querySelectorAll('.image-container');
-    const beforeImage = document.querySelector('.before-image') as HTMLImageElement;
-    const afterImage = document.querySelector('.after-image') as HTMLImageElement;
-    const sliderHandle = document.querySelector('.slider-handle') as HTMLElement;
-    const beforeAfterContainer = document.querySelector('.before-after-container') as HTMLElement;
+    const beforeImage = document.querySelector('.before-image');
+    const afterImage = document.querySelector('.after-image');
+    const sliderHandle = document.querySelector('.slider-handle');
+    const beforeAfterContainer = document.querySelector('.before-after-container');
     
     // Închidere lightbox
-    closeButton?.addEventListener('click', () => {
+    closeButton?.addEventListener('click', function() {
       lightbox.style.display = 'none';
       document.body.style.overflow = 'auto';
     });
     
-    // Deschidere lightbox când este apăsat un buton de imagine
+    // Deschidere lightbox
     imageContainers.forEach(imageContainer => {
       const overlayBtn = imageContainer.querySelector('.overlay-btn');
       
-      overlayBtn?.addEventListener('click', (e) => {
-        const target = e.currentTarget as HTMLElement;
-        const beforeSrc = target.getAttribute('data-before');
-        const afterSrc = target.getAttribute('data-after');
+      overlayBtn?.addEventListener('click', function() {
+        const beforeSrc = this.getAttribute('data-before');
+        const afterSrc = this.getAttribute('data-after');
         
-        if (beforeSrc && afterSrc && beforeImage && afterImage) {
+        if (beforeSrc && afterSrc) {
           beforeImage.src = beforeSrc;
           afterImage.src = afterSrc;
           
           // Resetare slider
-          if (sliderHandle) {
-            sliderHandle.style.left = '50%';
-          }
-          if (beforeImage) {
-            beforeImage.style.width = '50%';
-          }
+          sliderHandle.style.left = '50%';
+          beforeImage.style.width = '50%';
           
           // Afișare lightbox
           lightbox.style.display = 'flex';
@@ -312,47 +325,43 @@ const galleries = [
       });
     });
     
-    // Funcționalitate slider înainte/după
+    // Funcționalitate slider
     let isDragging = false;
     
-    sliderHandle?.addEventListener('mousedown', () => {
+    sliderHandle?.addEventListener('mousedown', function() {
       isDragging = true;
     });
     
-    document.addEventListener('mouseup', () => {
+    document.addEventListener('mouseup', function() {
       isDragging = false;
     });
     
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', function(e) {
       if (!isDragging || !beforeAfterContainer) return;
       
       const containerRect = beforeAfterContainer.getBoundingClientRect();
       const containerLeft = containerRect.left;
       const containerWidth = containerRect.width;
       
-      // Calculare poziție relativă în container (0-100%)
       let relX = ((e.clientX - containerLeft) / containerWidth) * 100;
-      
-      // Limitare între 0 și 100
       relX = Math.max(0, Math.min(100, relX));
       
-      // Poziționare
-      if (sliderHandle) sliderHandle.style.left = `${relX}%`;
-      if (beforeImage) beforeImage.style.width = `${relX}%`;
+      sliderHandle.style.left = relX + '%';
+      beforeImage.style.width = relX + '%';
     });
     
-    // Prevenire închidere lightbox când se face click în interior
-    document.querySelector('.before-after-container')?.addEventListener('click', (e) => {
+    // Prevenire închidere lightbox la click interior
+    beforeAfterContainer?.addEventListener('click', function(e) {
       e.stopPropagation();
     });
     
-    // Închidere lightbox când se face click în afara imaginii
-    lightbox?.addEventListener('click', () => {
+    // Închidere lightbox la click exterior
+    lightbox?.addEventListener('click', function() {
       lightbox.style.display = 'none';
       document.body.style.overflow = 'auto';
     });
     
-    // Inițializare cu filtrul "Toate" activ
+    // Inițializare cu "toate" activ
     filterGallery('toate');
   });
 </script>
@@ -379,10 +388,8 @@ const galleries = [
   
   .gallery-filter {
     padding: 2rem 0;
-    background-color: white;
-  }
-  
-  .filter-buttons {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -407,11 +414,13 @@ const galleries = [
   
   .gallery-section {
     padding: 3rem 0 5rem;
-    background-color: var(--color-light);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
   }
   
   .gallery-category {
     margin-bottom: 4rem;
+    display: block;
   }
   
   .gallery-category:last-child {
@@ -421,13 +430,15 @@ const galleries = [
   .gallery-title {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--color-dark);
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .gallery-description {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #666;
+    color: var(--secondary-text, #666);
+    transition: color 0.3s ease;
   }
   
   .gallery-grid {
@@ -439,16 +450,17 @@ const galleries = [
   .gallery-item {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: var(--card-bg);
   }
   
   .gallery-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px var(--shadow-color);
   }
   
-  .gallery-image-container {
+  .image-container {
     position: relative;
     overflow: hidden;
     aspect-ratio: 1 / 1;
@@ -465,7 +477,7 @@ const galleries = [
     transform: scale(1.05);
   }
   
-  .gallery-overlay {
+  .image-overlay {
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -476,16 +488,34 @@ const galleries = [
     transition: opacity 0.3s ease;
   }
   
-  .gallery-item:hover .gallery-overlay {
+  .gallery-item:hover .image-overlay {
     opacity: 1;
   }
   
-  .view-btn {
+  .overlay-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: white;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.2rem;
     border: 2px solid white;
     border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .overlay-btn:hover {
+    background-color: white;
+    color: var(--color-dark);
+  }
+  
+  .image-caption {
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s ease;
   }
   
   .lightbox {
@@ -501,19 +531,16 @@ const galleries = [
     justify-content: center;
   }
   
-  .lightbox-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-  }
-  
   .lightbox-close {
     position: absolute;
-    top: -40px;
-    right: -40px;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
     color: white;
     font-size: 30px;
     cursor: pointer;
+    z-index: 1001;
   }
   
   .before-after-container {
@@ -556,25 +583,26 @@ const galleries = [
     justify-content: center;
   }
   
-  .slider-line {
+  .handle-line {
     position: absolute;
     width: 2px;
     height: 100%;
     background-color: white;
   }
   
-  .slider-circle {
+  .handle-circle {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--color-dark);
   }
   
   @media (max-width: 768px) {
@@ -591,8 +619,8 @@ const galleries = [
     }
     
     .lightbox-close {
-      top: -30px;
-      right: 0;
+      top: 20px;
+      right: 20px;
     }
   }
 </style> 

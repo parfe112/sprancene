@@ -1,0 +1,25 @@
+---
+title: 'New Astro Component'
+description: 'Create a new Astro component'
+author: 'Cursor'
+---
+
+```astro
+---
+// Define your component props here
+interface Props {
+  title?: string;
+  class?: string;
+}
+
+const { title, class: className } = Astro.props;
+---
+
+<div class={className}>
+  {title && <h2>{title}</h2>}
+  <slot />
+</div>
+
+<style>
+  /* Component styles here */
+</style> 

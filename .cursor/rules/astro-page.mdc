@@ -1,0 +1,20 @@
+---
+title: 'New Astro Page'
+description: 'Create a new Astro page with main layout'
+author: 'Cursor'
+---
+
+```astro
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const pageTitle = "Page Title";
+---
+
+<MainLayout title={pageTitle}>
+  <main>
+    <h1>{pageTitle}</h1>
+    <p>Welcome to this page!</p>
+  </main>
+</MainLayout>
+``` 

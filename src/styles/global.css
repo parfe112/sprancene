@@ -1,0 +1,197 @@
+/* Dark Mode Styles */
+
+:root {
+  --color-primary: #b76e79;
+  --color-secondary: #d8a9b1;
+  --color-accent: #6d4552;
+  --color-light: #f8f0f2;
+  --color-dark: #2e1a23;
+  --font-main: 'Roboto', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  
+  --bg-color: var(--color-light);
+  --text-color: var(--color-dark);
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --section-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --input-bg: #f9f9f9;
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: var(--color-dark);
+  --secondary-text: #555555;
+  --muted-text: #777777;
+}
+
+.dark-mode {
+  --bg-color: #1a1118;
+  --text-color: #f8f0f2;
+  --card-bg: #2a1c24;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --section-bg: #231920;
+  --border-color: #3a2a32;
+  --input-bg: #2d1e26;
+  --header-bg: rgba(30, 20, 26, 0.95);
+  --footer-bg: #120c10;
+  --secondary-text: #d8b8c0;
+  --muted-text: #a08f94;
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --hover-color: #d8a9b1;
+}
+
+/* Card Elements - universal styling for cards in dark mode */
+.dark-mode .faq-item, 
+.dark-mode .service-card, 
+.dark-mode .testimonial-content,
+.dark-mode .contact-form-container,
+.dark-mode .about-card,
+.dark-mode .service-info-card,
+.dark-mode .main-content,
+.dark-mode .service-gallery,
+.dark-mode .value-item,
+.dark-mode .certification-item {
+  background-color: var(--card-bg);
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Text Elements - universal styling for text in dark mode */
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3, 
+.dark-mode h4, 
+.dark-mode h5, 
+.dark-mode h6,
+.dark-mode .section-title, 
+.dark-mode .service-title,
+.dark-mode .faq-item h3,
+.dark-mode .value-item h3,
+.dark-mode .certification-item h3 {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Paragraph and secondary text */
+.dark-mode p,
+.dark-mode .service-description,
+.dark-mode .faq-item p,
+.dark-mode .testimonial-author,
+.dark-mode .about-story p,
+.dark-mode .service-info-card li,
+.dark-mode .main-content li,
+.dark-mode .value-item p,
+.dark-mode li {
+  color: var(--secondary-text);
+  transition: color 0.3s ease;
+}
+
+/* Border elements */
+.dark-mode .service-info-card li,
+.dark-mode .certification-item {
+  border-color: var(--border-color);
+}
+
+/* Input elements */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/* Navigation and Header elements */
+.dark-mode .header {
+  background-color: var(--header-bg);
+}
+
+.dark-mode .nav-link {
+  color: var(--text-color);
+}
+
+.dark-mode .nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Override section background colors */
+.dark-mode .services,
+.dark-mode .testimonials,
+.dark-mode .about-section,
+.dark-mode .values-section,
+.dark-mode .certifications-section,
+.dark-mode .service-content,
+.dark-mode .contact-section,
+.dark-mode .faq {
+  background-color: var(--bg-color);
+}
+
+/* Provide better contrast for buttons */
+.dark-mode .btn-secondary {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.dark-mode .btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--bg-color);
+}
+
+/* Theme toggle button */
+.dark-mode .theme-toggle {
+  color: var(--color-secondary);
+  background-color: var(--card-bg);
+}
+
+/* Strong text across site */
+.dark-mode strong {
+  color: var(--color-primary);
+}
+
+/* FAQ items specific styles */
+.dark-mode .faq-item {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* Make sure service items are properly styled */
+.dark-mode .service-item,
+.dark-mode .service-content {
+  color: var(--text-color);
+}
+
+/* Fix specific pages */
+.dark-mode .about-section .about-story p,
+.dark-mode .services .service-description {
+  color: var(--secondary-text);
+}
+
+/* Galerie page specific styles */
+.dark-mode .gallery-section,
+.dark-mode .gallery-filter {
+  background-color: var(--bg-color);
+}
+
+.dark-mode .gallery-title {
+  color: var(--text-color);
+}
+
+.dark-mode .gallery-description {
+  color: var(--secondary-text);
+}
+
+.dark-mode .image-caption {
+  color: var(--secondary-text);
+}
+
+.dark-mode .gallery-item {
+  background-color: var(--card-bg);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.dark-mode .gallery-item:hover {
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.dark-mode .filter-btn {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+} 

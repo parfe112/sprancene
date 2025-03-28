@@ -1,0 +1,44 @@
+---
+title: 'Astro API Endpoint'
+description: 'Create a new Astro API endpoint'
+author: 'Cursor'
+---
+
+```ts
+export async function GET({ params, request }) {
+  // Handle GET request
+  return new Response(
+    JSON.stringify({
+      message: "This is a GET endpoint",
+      success: true,
+      data: {}
+    }),
+    {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+  );
+}
+
+export async function POST({ params, request }) {
+  // Parse the request body
+  const data = await request.json();
+  
+  // Handle POST request
+  return new Response(
+    JSON.stringify({
+      message: "This is a POST endpoint",
+      success: true,
+      receivedData: data
+    }),
+    {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+  );
+}
+``` 
