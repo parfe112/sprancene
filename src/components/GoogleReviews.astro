@@ -1,0 +1,709 @@
+---
+// Recenzii de pe Google - Înlocuiește aceste date cu recenziile reale de pe Google
+const googleReviews = [
+  {
+    name: "Alina C.",
+    rating: 5,
+    date: "acum 2 săptămâni",
+    text: "Andra este o profesionistă desăvârșită! M-am simțit în siguranță pe parcursul întregii proceduri, iar rezultatul este exact ce mi-am dorit. Sprâncenele mele arată impecabil și foarte natural!",
+    profileImg: "https://lh3.googleusercontent.com/a-/ALV-UjWU8z3SmJUVd9Gz8fN7ojH0sS80y9S46OuULIh_VcFkujc=s128-c0x00000000-cc-rp-mo-br100"
+  },
+  {
+    name: "Claudia M.",
+    rating: 5,
+    date: "acum o lună",
+    text: "Cea mai bună decizie! Nu mai pierd timp dimineața să-mi desenez sprâncenele. Andra este extrem de atentă la detalii și a creat forma perfectă pentru fața mea. Recomand cu căldură!",
+    profileImg: "https://lh3.googleusercontent.com/a-/ALV-UjX64JUgmTv9r6JLZTJ7JZ4j23_14UJ36xQ2f2G7Xfv2IA=s128-c0x00000000-cc-rp-mo-br100"
+  },
+  {
+    name: "Dana V.",
+    rating: 5,
+    date: "acum 3 luni",
+    text: "O experiență minunată! Am fost foarte mulțumită de rezultat și de profesionalismul Andrei. Studioulla este foarte curat și primitor, iar tehnica folosită este impecabilă. Rezultatul este exact ceea ce mi-am dorit!",
+    profileImg: "https://lh3.googleusercontent.com/a-/ALV-UjV1LV-TyK0QyKjQwGoBUPoP5vJv8HxF9NwKYbkXAHHX1eg=s128-c0x00000000-cc-rp-mo-ba2-br100"
+  },
+  {
+    name: "Mirela P.",
+    rating: 5,
+    date: "acum 5 luni",
+    text: "Am avut parte de o experiență minunată. Andra e foarte profesionistă, locația super curată, iar rezultatul e exact ce mi-am dorit. Sprâncenele mele arată natural și perfect conturate!",
+    profileImg: "https://lh3.googleusercontent.com/a-/ALV-UjXZEivHEKL0y9LUcmJyFCfRn9qMWkgpMrSm1yCZKnrSWw=s128-c0x00000000-cc-rp-mo-br100"
+  },
+  {
+    name: "Bianca T.",
+    rating: 5,
+    date: "acum 6 luni",
+    text: "Andra este un profesionist desăvârșit! Mi-a oferit consultanță completă înainte de procedură și am stabilit împreună forma perfectă. Rezultatul final este absolut superb! Recomand cu încredere!",
+    profileImg: "https://lh3.googleusercontent.com/a-/ALV-UjWFzVgU9eBkKgSoQVCVNKGjhTr8mMYj-1mNY3xTpVoUqw=s128-c0x00000000-cc-rp-mo-br100"
+  },
+  {
+    name: "Georgiana M.",
+    rating: 5,
+    date: "acum 8 luni",
+    text: "Sunt super mulțumită de rezultatul obținut! Andra e super profesionistă și atentă la detalii. Mi-a explicat tot procesul și am primit sfaturi utile pentru menținerea rezultatului. Revin cu siguranță!",
+    profileImg: "https://lh3.googleusercontent.com/a-/ALV-UjX_4P3BdZcRn4jHGWQGIxFTv8LCVnvEu3-8RiDLxEX3sg=s128-c0x00000000-cc-rp-mo-br100"
+  }
+];
+---
+
+<section class="google-reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="header-content" data-aos="fade-up">
+        <h2 class="section-title">Recenzii Google</h2>
+        <div class="rating-summary">
+          <div class="rating-stars">
+            <span class="rating-value">5.0</span>
+            <div class="stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="star">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="star">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="star">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="star">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="star">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="google-badge">
+            <img src="/images/google-review-badge.svg" alt="Verificat pe Google" class="google-icon" />
+            <span>Bazat pe {googleReviews.length}+ recenzii</span>
+          </div>
+          <a href="https://www.google.com/maps/place/Andra+Microblading%5CMicropigmentare+sector+5+Bucuresti/@44.4105752,26.0523262,17z/data=!4m8!3m7!1s0x40b1ff998d050721:0x1a6d7b39d9cf294e!8m2!3d44.4105714!4d26.0549011!9m1!1b1!16s%2Fg%2F11p67c296t?entry=ttu" target="_blank" rel="noopener noreferrer" class="view-all-btn">
+            Vezi toate recenziile
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+              <path d="M7 17l5-5-5-5m6 10l5-5-5-5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-container" data-aos="fade-up">
+      <div class="reviews-scroll">
+        {googleReviews.map((review) => (
+          <a href="https://www.google.com/maps/place/Andra+Microblading%5CMicropigmentare+sector+5+Bucuresti/@44.4105752,26.0523262,17z/data=!4m8!3m7!1s0x40b1ff998d050721:0x1a6d7b39d9cf294e!8m2!3d44.4105714!4d26.0549011!9m1!1b1!16s%2Fg%2F11p67c296t?entry=ttu" target="_blank" rel="noopener noreferrer" class="review-card-link">
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <img src={review.profileImg} alt={review.name} class="reviewer-avatar" loading="lazy" />
+                  <div class="reviewer-meta">
+                    <h3 class="reviewer-name">{review.name}</h3>
+                    <div class="review-date">{review.date}</div>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  {[1, 2, 3, 4, 5].slice(0, review.rating).map(() => (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="review-star">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <div class="review-content">
+                <p class="review-text">{review.text}</p>
+              </div>
+              <div class="review-footer">
+                <img src="/images/google-g-logo.svg" alt="Google" class="google-logo" />
+                <span class="posted-on">Postat pe Google</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="scroll-controls">
+        <button class="scroll-btn prev-btn" aria-label="Recenzia anterioară">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="scroll-indicators"></div>
+        <button class="scroll-btn next-btn" aria-label="Recenzia următoare">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Selectăm elementele necesare pentru slider
+    const scrollContainer = document.querySelector('.reviews-scroll');
+    const scrollPrevBtn = document.querySelector('.prev-btn');
+    const scrollNextBtn = document.querySelector('.next-btn');
+    const scrollIndicators = document.querySelector('.scroll-indicators');
+    const reviewCardLinks = document.querySelectorAll('.review-card-link');
+    
+    if (!scrollContainer || !scrollIndicators || reviewCardLinks.length === 0) {
+      console.error('Elementele necesare pentru slider nu au fost găsite');
+      return;
+    }
+    
+    let currentIndex = 0;
+    let cardWidth = 0;
+    let visibleCards = 0;
+    let totalSlides = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    // Creăm indicatorii de scroll
+    function createIndicators() {
+      if (!scrollIndicators) return;
+      
+      scrollIndicators.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const indicator = document.createElement('button');
+        indicator.classList.add('scroll-indicator');
+        indicator.setAttribute('aria-label', `Recenzia ${i + 1}`);
+        if (i === 0) indicator.classList.add('active');
+        
+        indicator.addEventListener('click', () => {
+          goToSlide(i);
+        });
+        
+        scrollIndicators.appendChild(indicator);
+      }
+    }
+    
+    // Calculăm parametrii vizibili
+    function calculateVisibleCards() {
+      if (!scrollContainer || reviewCardLinks.length === 0) return;
+      
+      const containerWidth = scrollContainer.clientWidth;
+      // Convertim primul card într-un HTMLElement pentru a accesa proprietățile sale
+      const firstCard = reviewCardLinks[0];
+      if (!(firstCard instanceof HTMLElement)) return;
+      
+      cardWidth = firstCard.offsetWidth + parseInt(window.getComputedStyle(firstCard).marginRight);
+      visibleCards = Math.floor(containerWidth / cardWidth);
+      totalSlides = Math.max(1, reviewCardLinks.length - visibleCards + 1);
+      
+      createIndicators();
+    }
+    
+    // Navigare la un slide specific
+    function goToSlide(index) {
+      if (!scrollContainer) return;
+      
+      if (index < 0) index = 0;
+      if (index > totalSlides - 1) index = totalSlides - 1;
+      
+      currentIndex = index;
+      const scrollLeft = index * cardWidth;
+      scrollContainer.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth'
+      });
+      
+      updateIndicators();
+    }
+    
+    // Actualizăm indicatorii
+    function updateIndicators() {
+      if (!scrollIndicators) return;
+      
+      const indicators = scrollIndicators.querySelectorAll('.scroll-indicator');
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+    
+    // Ascultător pentru scroll-ul container-ului
+    function handleScroll() {
+      if (!scrollContainer) return;
+      
+      const scrollPosition = scrollContainer.scrollLeft;
+      // Calculăm index-ul curent bazat pe poziția de scroll
+      const newIndex = Math.round(scrollPosition / cardWidth);
+      
+      if (newIndex !== currentIndex) {
+        currentIndex = newIndex;
+        updateIndicators();
+      }
+    }
+    
+    // Touch events pentru swipe pe mobil
+    function handleTouchStart(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }
+    
+    function handleTouchEnd(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe la stânga - next slide
+        goToSlide(currentIndex + 1);
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe la dreapta - previous slide
+        goToSlide(currentIndex - 1);
+      }
+    }
+    
+    // Inițializăm slider-ul
+    calculateVisibleCards();
+    
+    // Gestionăm click-urile pe butoane
+    if (scrollPrevBtn) {
+      scrollPrevBtn.addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+      });
+    }
+    
+    if (scrollNextBtn) {
+      scrollNextBtn.addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
+      });
+    }
+    
+    // Ascultători pentru scroll și touch events
+    scrollContainer.addEventListener('scroll', handleScroll);
+    scrollContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+    scrollContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
+    
+    // Actualizăm la redimensionare
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      // Debounce pentru a preveni calculări multiple pe resize
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        calculateVisibleCards();
+        goToSlide(0);
+      }, 200);
+    });
+    
+    // Autoplay
+    let autoplayInterval = setInterval(() => {
+      goToSlide((currentIndex + 1) % totalSlides);
+    }, 5000);
+    
+    // Pauză autoplay la hover/touch
+    if (scrollContainer) {
+      scrollContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+      });
+      
+      scrollContainer.addEventListener('mouseleave', () => {
+        autoplayInterval = setInterval(() => {
+          goToSlide((currentIndex + 1) % totalSlides);
+        }, 5000);
+      });
+      
+      scrollContainer.addEventListener('touchstart', () => {
+        clearInterval(autoplayInterval);
+      }, { passive: true });
+      
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          clearInterval(autoplayInterval);
+        } else {
+          autoplayInterval = setInterval(() => {
+            goToSlide((currentIndex + 1) % totalSlides);
+          }, 5000);
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .google-reviews {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .header-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin: 0;
+    background: linear-gradient(135deg, var(--color-primary), #ffc0cb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--color-primary), #ffc0cb);
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+  }
+  
+  .rating-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  @media (min-width: 768px) {
+    .rating-summary {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+  
+  .rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .rating-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  
+  .stars {
+    display: flex;
+    color: #FBBC05;
+  }
+  
+  .star {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .google-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+  }
+  
+  .google-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .view-all-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    border-radius: 30px;
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .view-all-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .reviews-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .reviews-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 1rem 0.5rem;
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .reviews-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .review-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    flex: 0 0 auto;
+    width: calc(100% - 2rem);
+    max-width: 400px;
+    transition: transform 0.3s ease;
+  }
+  
+  .review-card-link:hover {
+    transform: translateY(-5px);
+  }
+  
+  @media (min-width: 768px) {
+    .review-card-link {
+      width: calc(50% - 1.5rem);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .review-card-link {
+      width: calc(33.333% - 1.5rem);
+    }
+  }
+  
+  .review-card {
+    height: 100%;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  
+  .review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(135deg, var(--color-primary), #ffc0cb);
+    z-index: -1;
+  }
+  
+  .review-card-link:hover .review-card {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .reviewer-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-primary);
+  }
+  
+  .reviewer-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 0.25rem;
+  }
+  
+  .review-date {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+  }
+  
+  .review-rating {
+    display: flex;
+    color: #FBBC05;
+  }
+  
+  .review-star {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .review-content {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+  
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+  
+  .review-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+  }
+  
+  .google-logo {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .posted-on {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+  }
+  
+  .scroll-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .scroll-btn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .scroll-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .scroll-indicators {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .scroll-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-indicator.active {
+    background-color: var(--color-primary);
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 768px) {
+    .google-reviews {
+      padding: 3rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .scroll-controls {
+      margin-top: 1.5rem;
+    }
+    
+    .container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    .reviews-scroll {
+      padding: 1rem 0.25rem;
+    }
+    
+    .review-card-link {
+      width: 85%;
+      min-width: 280px;
+      max-width: 330px;
+    }
+    
+    .review-card {
+      padding: 1.25rem;
+    }
+    
+    .reviewer-avatar {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media (hover: none) {
+    .reviews-scroll {
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+    
+    .review-card-link {
+      scroll-snap-align: start;
+    }
+  }
+</style> 
